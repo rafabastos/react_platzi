@@ -1,17 +1,11 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
 
-class Media extends React.Component {
+class Media extends PureComponent {
 	state = {
 		author: 'rafabastos'
 	}
-	// constructor(props) {
-	// 	super(props)
-	// 	this.state = {
-	// 		author: props.author
-	// 	}
-	// }
 	handleClick = (event) => {
 		console.log(this.props.title);
 		this.setState({
