@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends React.Component {
+	state = {
+		author: 'rafabastos'
+	}
 	// constructor(props) {
 	// 	super(props)
-	// 	this.handleClick = this.handleClick.bind(this)
+	// 	this.state = {
+	// 		author: props.author
+	// 	}
 	// }
 	handleClick = (event) => {
 		console.log(this.props.title);
+		this.setState({
+			author: 'Rafael Bastos'
+		})
 	}
 	render() {
 		const styles = {
@@ -23,14 +31,14 @@ class Media extends React.Component {
 			<div className="Media" onClick={this.handleClick}>
                 <div className="Media-cover">
 					<img
-						src={this.props.image}
+						src={this.props.cover}
 						alt=""
-						width={260}
+						width={240}
 						height={160}
 						className="Media-image"
 					/>
 					<h3 className="Media-title">{this.props.title}</h3>
-					<p className="Media-author">rafabastos</p>
+					<p className="Media-author">{this.props.author}</p>
 				</div>
             </div>
 		)
@@ -38,7 +46,7 @@ class Media extends React.Component {
 }
 
 Media.propTypes = {
-	image: PropTypes.string,
+	cover: PropTypes.string,
 	title: PropTypes.string,
 	author: PropTypes.string,
 }
