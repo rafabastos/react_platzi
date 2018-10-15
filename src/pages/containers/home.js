@@ -4,6 +4,7 @@ import Categories from '../../categories/components/categories'
 import Related from '../components/related';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal';
+import VideoPlayer from '../../player/containers/video-player';
 
 class Home extends Component {
     state = {
@@ -23,6 +24,9 @@ class Home extends Component {
         return (
             <HomeLayout>
                 <Related />
+                <VideoPlayer
+                    autoPlay
+                />
                 <Categories 
                     categories={this.props.data.categories}
                     handleOpenModal={this.handleOpenModal}
