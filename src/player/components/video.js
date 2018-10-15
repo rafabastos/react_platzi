@@ -21,6 +21,8 @@ class Video extends Component {
         const {
             handleLoadedMetadata,
             handleTimeUpdate,
+            handleSeeking,
+            handleSeeked,
         } = this.props
         return (
             <div className="Video">
